@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neuropsicologia dos Transtornos Psiquiátricos</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer>
+    // Alternância de abas
+    function mostrarAba(aba) {
+      document.querySelectorAll('.aba').forEach(el => el.style.display = 'none');
+      document.getElementById(aba).style.display = 'block';
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('ativa'));
+      document.querySelector(`[data-aba="${aba}"]`).classList.add('ativa');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      mostrarAba('curriculo');
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          mostrarAba(btn.dataset.aba);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="cabecalho">
+    <img src="perfil.jpeg" alt="Foto da profissional" class="foto"/>
+    <div class="info">
+      <h1 class="titulo">Neuropsicologia dos Transtornos Psiquiátricos</h1>
+      
+      <div class="tabs">
+        <button class="tab-button ativa" data-aba="curriculo">Currículo</button>
+        <button class="tab-button" data-aba="atuacao">Atuação</button>
+      </div>
+
+      <div id="curriculo" class="aba">
+        <p class="curriculo">
+          <strong>CRP 23/2499</strong><br>
+          Graduada em Psicologia pela Universidade Luterana do Brasil (ULBRA PALMAS).<br>
+          Especialista em Neuropsicologia pela Faculdade de Tecnologia GAP (NEPNEURO - Núcleo de Ensino e Pesquisa em Neurociência).<br>
+          Participante do GT de Psicopatologia no Comitê Jovem da Sociedade Brasileira de Neuropsicologia (gestão 24–26).
+        </p>
+      </div>
+
+      <div id="atuacao" class="aba" style="display: none;">
+        <p class="curriculo">
+          Realiza Avaliação Neuropsicológica Infantil, Jovem, Adulto e Idoso.<br>
+          Atua com estudos, palestras e capacitações sobre Neuropsicologia, Avaliação Neuropsicológica, Transtornos do Neurodesenvolvimento e Saúde Mental.<br>
+          Supervisora e Mentora Clínica em Neuropsicologia, diagnóstico, elaboração de laudo, orientações e raciocínio clínico.
+        </p>
+      </div>
+
+      <a href="https://wa.me/5563992443814" class="botao-contato" target="_blank">📱 Falar no WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="materiais-section">
+      <h2>Materiais da Aula</h2>
+      <ul class="materiais">
+        <li><a href="arquivos/slides-aula.pdf" download>📄 Slides da Aula (PDF)</a></li>
+        <li><a href="arquivos/artigo-referencia.pdf" download>📚 Artigo de Referência</a></li>
+        </ul>
+    </section>
+
+    <section class="topicos">
+      <h2>Assuntos Trabalhados</h2>
+      <div class="grade-topicos">
+        <a href="https://www.scielo.br/j/hcsm/a/9r4mBrtsJ6w9RBd9hWSnTPb/" class="topico" target="_blank">Espectro da Esquizofrenia e Outros Transtornos Psicóticos</a>
+        <a href="https://www.scielo.br/j/rbp/a/SkkGvsZprmqFgfKFczJgyHN/" class="topico" target="_blank">Transtorno Bipolar e Transtornos Relacionados</a>
+        <a href="https://www.scielo.br/j/rbp/a/7YBWGD6DJdkRJcyCPZz43dr/" class="topico" target="_blank">Transtornos Depressivos</a>
+        <a href="https://www.scielo.br/j/rbp/a/vCkLTY8hzDGfwMv3FV9ftdh/?format=pdf" class="topico" target="_blank">Transtornos de Ansiedade</a>
+        <a href="https://www.scielo.br/j/rbp/a/74LWrjyTsYxCGzL8hPvff6J/" class="topico" target="_blank">Transtorno Obsessivo-compulsivo e Transtornos Relacionados</a>
+        <a href="https://www.scielo.br/j/rbp/a/yhBZ6h6cv6fXpq88GzxV47q/" class="topico" target="_blank">Transtornos Relacionados a Trauma e a Estressores</a>
+        <a href="https://www.scielo.br/j/rbp/a/8rrPDMV98fQBGKPGpLJsq9k/abstract/?lang=pt&format=html" class="topico" target="_blank">Transtornos Dissociativos</a>
+        <a href="https://www.scielo.br/j/pcp/a/twbLn3zXqpPDr98KrD89Sxc/" class="topico" target="_blank">Transtorno de Sintomas Somáticos e Transtornos Relacionados</a>
+        <a href="https://www.scielo.br/j/rpp/a/FhGt8KPLRMTDkmKvM4HtQPh" class="topico" target="_blank">Transtornos Alimentares</a>
+        <a href="https://www.scielo.br/j/jbpneu/a/wq7bRVdv6yPwj7GQg9gptxM/" class="topico" target="_blank">Transtornos do Sono-Vigília</a>
+        <a href="https://www.scielo.br/j/rbp/a/tcnP4wwbLFqGRY3P3hjnpnk/?format=pdf" class="topico" target="_blank">Transtornos Disruptivos, do Controle de Impulsos e da Conduta</a>
+        <a href="https://www.scielo.br/j/rbp/a/XmqV9SBL7QzZxFTQCPgvrHn/?lang=pt" class="topico" target="_blank">Transtornos Relacionados a Substâncias e Transtornos Aditivos</a>
+        <a href="https://www.scielo.br/j/rbp/a/mFz4QLyYLQDpwdcXBM7phzd/" class="topico" target="_blank">Transtornos da Personalidade</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Netto© 2025 - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,237 @@
+:root {
+  --cor-primaria: #3b5998;
+  --cor-secundaria: #f0f2f5;
+  --cor-destaque: #2a3d66;
+  --cor-texto: #333;
+  --cor-branco: #ffffff;
+  --cor-cinza: #666;
+  --cor-verde: #25D366;
+  --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --fonte: 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Centraliza verticalmente a foto e o texto */
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-destaque));
+  color: var(--cor-branco);
+  padding: 2rem;
+  box-shadow: var(--sombra);
+  gap: 2rem; /* Espaçamento entre a foto e o bloco de informações */
+}
+
+.foto {
+  width: 180px; /* Aumenta o tamanho da foto */
+  height: 180px; /* Aumenta o tamanho da foto */
+  border-radius: var(--radius); /* Deixa a imagem quadrada com cantos arredondados */
+  object-fit: cover;
+  /* Borda e box-shadow foram removidos para um visual mais limpo e harmônico */
+}
+
+.info {
+  max-width: 600px;
+  padding: 1rem;
+}
+
+.info .titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ABAS */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background-color: var(--cor-branco);
+  color: var(--cor-destaque);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.tab-button.ativa {
+  background-color: var(--cor-destaque);
+  color: white;
+}
+
+.tab-button:hover {
+  background-color: var(--cor-primaria);
+  color: white;
+}
+
+.aba {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+.curriculo {
+  font-size: 1rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* BOTÃO WHATSAPP */
+.botao-contato {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--cor-verde);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: var(--sombra);
+  transition: background-color 0.3s ease;
+}
+
+.botao-contato:hover {
+  background-color: #1ebe5b;
+}
+
+/* CONTEÚDO */
+main.conteudo {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* MATERIAIS */
+.materiais-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--cor-destaque);
+  text-align: center;
+}
+
+.materiais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.materiais li {
+  background-color: var(--cor-branco);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.materiais li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.materiais a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: bold;
+  display: block;
+  font-size: 1.05rem;
+}
+
+.materiais a::before {
+  content: "📎 ";
+}
+
+/* TÓPICOS */
+.topicos {
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.topicos h2 {
+  text-align: center;
+  color: var(--cor-destaque);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.grade-topicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* Como os tópicos agora são links (<a>), aplicamos o estilo diretamente a eles */
+.topico { /* Esta classe agora será aplicada diretamente à tag <a> no HTML */
+  background-color: var(--cor-branco);
+  padding: 1rem 1.2rem;
+  border-left: 6px solid var(--cor-primaria);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  transition: 0.2s;
+  font-weight: 500;
+  text-decoration: none; /* Garante que o sublinhado padrão do link seja removido */
+  color: var(--cor-texto); /* Define a cor do texto do link */
+  display: block; /* Garante que o link ocupe todo o espaço do tópico */
+}
+
+.topico:hover {
+  background-color: #f7faff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* RODAPÉ */
+footer.rodape {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ddd;
+  color: var(--cor-cinza);
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .cabecalho {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem; /* Ajuste o gap para telas menores se necessário */
+    padding: 1.5rem; /* Ajuste o padding para telas menores */
+  }
+
+  .tabs {
+    justify-content: center;
+  }
+
+  .info .titulo {
+    font-size: 1.6rem;
+  }
+
+  .foto {
+    margin-bottom: 0.5rem; /* Um pequeno espaço abaixo da foto em telas menores, se desejar */
+    width: 140px; /* Reduz o tamanho da foto um pouco para telas menores */
+    height: 140px;
+  }
+}
