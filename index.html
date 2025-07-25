@@ -5,88 +5,2562 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Neuropsicologia dos Transtornos Psiquiátricos</title>
   <link rel="stylesheet" href="style.css"/>
-  <script defer>
-    // Alternância de abas
-    function mostrarAba(aba) {
-      document.querySelectorAll('.aba').forEach(el => el.style.display = 'none');
-      document.getElementById(aba).style.display = 'block';
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('ativa'));
-      document.querySelector(`[data-aba="${aba}"]`).classList.add('ativa');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      mostrarAba('curriculo');
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          mostrarAba(btn.dataset.aba);
-        });
-      });
-    });
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header class="cabecalho">
-    <img src="perfil.jpeg" alt="Foto da profissional" class="foto"/>
-    <div class="info">
-      <h1 class="titulo">Neuropsicologia dos Transtornos Psiquiátricos</h1>
-      
-      <div class="tabs">
-        <button class="tab-button ativa" data-aba="curriculo">Currículo</button>
-        <button class="tab-button" data-aba="atuacao">Atuação</button>
+
+  <div class="layout-container">
+    <aside class="sidebar">
+      <div class="profile-section">
+        <img src="perfil.jpeg" alt="Foto da profissional" class="foto"/>
+        <h1 class="titulo">Ana Laura A. Dutra</h1>
+        <p class="crp">CRP 23/2499</p>
       </div>
 
-      <div id="curriculo" class="aba">
-        <p class="curriculo">
-          <strong>CRP 23/2499</strong><br>
-          Graduada em Psicologia pela Universidade Luterana do Brasil (ULBRA PALMAS).<br>
-          Especialista em Neuropsicologia pela Faculdade de Tecnologia GAP (NEPNEURO - Núcleo de Ensino e Pesquisa em Neurociência).<br>
-          Participante do GT de Psicopatologia no Comitê Jovem da Sociedade Brasileira de Neuropsicologia (gestão 24–26).
-        </p>
+      <nav class="main-nav">
+        <button class="nav-button ativa" data-target-section="materiais-aula">Materiais da Aula</button>
+        <button class="nav-button" data-target-section="assuntos-trabalhados">Assuntos Trabalhados</button>
+        <button class="nav-button" data-target-section="perguntas-respostas">Psicofarmacologia FAQ</button>
+        <button class="nav-button" data-target-section="transtornos-personalidade-grupo-b">TP Grupo B FAQ</button>
+        <button class="nav-button" data-target-section="principais-transtornos">Principais Transtornos FAQ</button>
+      </nav>
+
+      <div class="sidebar-info">
+        <h3>Sobre Mim</h3>
+        <p>Psicóloga especialista em Neuropsicologia, com foco em avaliação e capacitação. Membro do GT de Psicopatologia da SBNp. Ofereço supervisão e mentoria clínica.</p>
+        <a href="https://wa.me/5563992443814" class="botao-contato" target="_blank">📱 Falar no WhatsApp</a>
       </div>
+    </aside>
 
-      <div id="atuacao" class="aba" style="display: none;">
-        <p class="curriculo">
-          Realiza Avaliação Neuropsicológica Infantil, Jovem, Adulto e Idoso.<br>
-          Atua com estudos, palestras e capacitações sobre Neuropsicologia, Avaliação Neuropsicológica, Transtornos do Neurodesenvolvimento e Saúde Mental.<br>
-          Supervisora e Mentora Clínica em Neuropsicologia, diagnóstico, elaboração de laudo, orientações e raciocínio clínico.
-        </p>
-      </div>
-
-      <a href="https://wa.me/5563992443814" class="botao-contato" target="_blank">📱 Falar no WhatsApp</a>
-    </div>
-  </header>
-
-  <main class="conteudo">
-    <section class="materiais-section">
-      <h2>Materiais da Aula</h2>
-      <ul class="materiais">
-        <li><a href="arquivos/slides-aula.pdf" download>📄 Slides da Aula (PDF)</a></li>
-        <li><a href="arquivos/artigo-referencia.pdf" download>📚 Artigo de Referência</a></li>
+    <main class="main-content">
+      <section id="materiais-aula" class="content-section">
+        <h2>Materiais da Aula</h2>
+        <ul class="materiais">
+          <li><a href="Transtornos-de-Personalidade-do-Grupo-B.pdf" download>📄 Transtornos de Personalidade do Grupo B (PDF)</a></li>
+          <li><a href="Psicopatologia-Principais-Transtornos-e-Condicoes-Mentais.pdf" download>📄 Psicopatologia: Principais Transtornos e Condições Mentais (PDF)</a></li>
+          <li><a href="Psicofarmacologia-e-Neurotransmissao-Fundamentos-para-a-Neuropsicologia.pdf" download>📄 Psicofarmacologia e Neurotransmissão: Fundamentos para a Neuropsicologia (PDF)</a></li>
         </ul>
-    </section>
+      </section>
 
-    <section class="topicos">
-      <h2>Assuntos Trabalhados</h2>
-      <div class="grade-topicos">
-        <a href="https://www.scielo.br/j/hcsm/a/9r4mBrtsJ6w9RBd9hWSnTPb/" class="topico" target="_blank">Espectro da Esquizofrenia e Outros Transtornos Psicóticos</a>
-        <a href="https://www.scielo.br/j/rbp/a/SkkGvsZprmqFgfKFczJgyHN/" class="topico" target="_blank">Transtorno Bipolar e Transtornos Relacionados</a>
-        <a href="https://www.scielo.br/j/rbp/a/7YBWGD6DJdkRJcyCPZz43dr/" class="topico" target="_blank">Transtornos Depressivos</a>
-        <a href="https://www.scielo.br/j/rbp/a/vCkLTY8hzDGfwMv3FV9ftdh/?format=pdf" class="topico" target="_blank">Transtornos de Ansiedade</a>
-        <a href="https://www.scielo.br/j/rbp/a/74LWrjyTsYxCGzL8hPvff6J/" class="topico" target="_blank">Transtorno Obsessivo-compulsivo e Transtornos Relacionados</a>
-        <a href="https://www.scielo.br/j/rbp/a/yhBZ6h6cv6fXpq88GzxV47q/" class="topico" target="_blank">Transtornos Relacionados a Trauma e a Estressores</a>
-        <a href="https://www.scielo.br/j/rbp/a/8rrPDMV98fQBGKPGpLJsq9k/abstract/?lang=pt&format=html" class="topico" target="_blank">Transtornos Dissociativos</a>
-        <a href="https://www.scielo.br/j/pcp/a/twbLn3zXqpPDr98KrD89Sxc/" class="topico" target="_blank">Transtorno de Sintomas Somáticos e Transtornos Relacionados</a>
-        <a href="https://www.scielo.br/j/rpp/a/FhGt8KPLRMTDkmKvM4HtQPh" class="topico" target="_blank">Transtornos Alimentares</a>
-        <a href="https://www.scielo.br/j/jbpneu/a/wq7bRVdv6yPwj7GQg9gptxM/" class="topico" target="_blank">Transtornos do Sono-Vigília</a>
-        <a href="https://www.scielo.br/j/rbp/a/tcnP4wwbLFqGRY3P3hjnpnk/?format=pdf" class="topico" target="_blank">Transtornos Disruptivos, do Controle de Impulsos e da Conduta</a>
-        <a href="https://www.scielo.br/j/rbp/a/XmqV9SBL7QzZxFTQCPgvrHn/?lang=pt" class="topico" target="_blank">Transtornos Relacionados a Substâncias e Transtornos Aditivos</a>
-        <a href="https://www.scielo.br/j/rbp/a/mFz4QLyYLQDpwdcXBM7phzd/" class="topico" target="_blank">Transtornos da Personalidade</a>
-      </div>
-    </section>
-  </main>
+      <section id="assuntos-trabalhados" class="content-section" style="display: none;">
+        <h2>Assuntos Trabalhados</h2>
+        <div class="grade-topicos">
+          <a href="https://www.scielo.br/j/hcsm/a/9r4mBrtsJ6w9RBd9hWSnTPb/" class="topico" target="_blank">Espectro da Esquizofrenia e Outros Transtornos Psicóticos</a>
+          <a href="https://www.scielo.br/j/rbp/a/SkkGvsZprmqFgfKFczJgyHN/" class="topico" target="_blank">Transtorno Bipolar e Transtornos Relacionados</a>
+          <a href="https://www.scielo.br/j/rbp/a/7YBWGD6DJdkRJcyCPZz43dr/" class="topico" target="_blank">Transtornos Depressivos</a>
+          <a href="https://www.scielo.br/j/rbp/a/vCkLTY8hzDGfwMv3FV9ftdh/?format=pdf" class="topico" target="_blank">Transtornos de Ansiedade</a>
+          <a href="https://www.scielo.br/j/rbp/a/74LWrjyTsYxCGzL8hPvff6J/" class="topico" target="_blank">Transtorno Obsessivo-compulsivo e Transtornos Relacionados</a>
+          <a href="https://www.scielo.br/j/rbp/a/yhBZ6h6cv6fXpq88GzxV47q/" class="topico" target="_blank">Transtornos Relacionados a Trauma e a Estressores</a>
+          <a href="https://www.scielo.br/j/rbp/a/8rrPDMV98fQBGKPGpLJsq9k/abstract/?lang=pt&format=html" class="topico" target="_blank">Transtornos Dissociativos</a>
+          <a href="https://www.scielo.br/j/pcp/a/twbLn3zXqpPDr98KrD89Sxc/" class="topico" target="_blank">Transtorno de Sintomas Somáticos e Transtornos Relacionados</a>
+          <a href="https://www.scielo.br/j/rpp/a/FhGt8KPLRMTDkmKvM4HtQPh" class="topico" target="_blank">Transtornos Alimentares</a>
+          <a href="https://www.scielo.br/j/jbpneu/a/wq7bRVdv6yPwj7GQg9gptxM/" class="topico" target="_blank">Transtornos do Sono-Vigília</a>
+          <a href="https://www.scielo.br/j/rbp/a/tcnP4wwbLFqGRY3P3hjnpnk/?format=pdf" class="topico" target="_blank">Transtornos Disruptivos, do Controle de Impulsos e da Conduta</a>
+          <a href="https://www.scielo.br/j/rbp/a/XmqV9SBL7QzZxFTQCPgvrHn/?lang=pt" class="topico" target="_blank">Transtornos Relacionados a Substâncias e Transtornos Aditivos</a>
+          <a href="https://www.scielo.br/j/rbp/a/mFz4QLyYLQDpwdcXBM7phzd/" class="topico" target="_blank">Transtornos da Personalidade</a>
+        </div>
+      </section>
 
+      <section id="perguntas-respostas" class="content-section" style="display: none;">
+        <h2>Psicofarmacologia e Neurotransmissão: Fundamentos para a Neuropsicologia</h2>
+
+        <div id="fundamentos" class="faq-page-content">
+          <h3>Fundamentos Neurobiológicos</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="c">1. A comunicação entre neurônios ocorre principalmente através da liberação de substâncias na fenda sináptica. Como essas substâncias são chamadas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q1" value="a"> Hormônios
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q1" value="b"> Enzimas
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q1" value="c"> Neurotransmissores
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q1" value="d"> Íons
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">2. Qual dos seguintes neurotransmissores NÃO é explicitamente mencionado no texto como um dos principais envolvidos em transtornos psiquiátricos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q2" value="a"> Serotonina
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q2" value="b"> Dopamina
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q2" value="c"> Acetilcolina
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q2" value="d"> GABA
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">3. O que a interligação das ações dos neurotransmissores explica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q3" value="a"> Que cada fármaco atua em um único sistema neural.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q3" value="b"> Por que um único fármaco pode produzir múltiplos efeitos terapêuticos e colaterais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q3" value="c"> A ausência de sintomatologia em transtornos psiquiátricos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q3" value="d"> A independência dos sistemas dopaminérgico e serotoninérgico.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">4. O processo de "recaptação" na fenda sináptica refere-se a:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q4" value="a"> A liberação de neurotransmissores por vesículas sinápticas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q4" value="b"> A ligação de neurotransmissores a receptores específicos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q4" value="c"> A metabolização de neurotransmissores por enzimas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q4" value="d"> A remoção de neurotransmissores da fenda por transportadores específicos, para reutilização.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">5. Qual o efeito de fármacos que estimulam a liberação de neurotransmissores, como as anfetaminas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q5" value="a"> Bloqueio dos transportadores de recaptação.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q5" value="b"> Efeito geralmente mais rápido e intenso.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q5" value="c"> Aumento da degradação enzimática.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q5" value="d"> Efeito gradual e sustentado.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="psicofarmacologia" class="faq-page-content">
+          <h3>Psicofarmacologia</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="c">6. A psicofarmacologia é o estudo dos efeitos de medicamentos em qual das seguintes áreas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q6" value="a"> Somente no comportamento humano.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q6" value="b"> Exclusivamente em transtornos do movimento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q6" value="c"> No comportamento, humor, sensações e pensamentos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q6" value="d"> Apenas na fisiologia de órgãos periféricos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">7. Um dos princípios fundamentais da psicofarmacologia, segundo o texto, é:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q7" value="a"> A homogeneidade da relação dose-resposta entre indivíduos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q7" value="b"> A especificidade relativa de ação nos receptores.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q7" value="c"> A ausência de latência para o início dos efeitos terapêuticos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q7" value="d"> A falta de tolerância com uso prolongado.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">8. Qual das seguintes opções é um dos desafios clínicos mencionados na psicofarmacologia?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q8" value="a"> Padronização universal do tratamento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q8" value="b"> Individualização do tratamento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q8" value="c"> Ausência de efeitos colaterais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q8" value="d"> Independência da psicoterapia em relação aos psicofármacos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">9. Qual classe de psicofármacos atua principalmente no sistema dopaminérgico para controlar sintomas psicóticos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q9" value="a"> Antidepressivos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q9" value="b"> Ansiolíticos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q9" value="c"> Antipsicóticos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q9" value="d"> Estabilizadores de Humor
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">10. Os estabilizadores de humor, como o Lítio, atuam na modulação de quais mecanismos intracelulares?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q10" value="a"> Na inibição da inositol monofosfatase e regulação das vias de sinalização intracelular.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q10" value="b"> Exclusivamente na regulação de canais iônicos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q10" value="c"> Apenas na neuroproteção contra a morte celular.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q10" value="d"> Somente na modulação de neurotransmissores excitatórios.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">11. Um efeito colateral comum dos estabilizadores de humor, como o valproato, é:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q11" value="a"> Redução da impulsividade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q11" value="b"> Ganho de peso e sedação.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q11" value="c"> Melhora da cognição.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q11" value="d"> Diminuição do risco de suicídio.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">12. Os benzodiazepínicos potencializam a ação de qual neurotransmissor principal inibitório do SNC?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q12" value="a"> Dopamina
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q12" value="b"> GABA
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q12" value="c"> Serotonina
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q12" value="d"> Noradrenalina
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">13. Comparando benzodiazepínicos, antidepressivos e antipsicóticos, qual classe tem um início de ação rápido (minutos a horas)?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q13" value="a"> Antidepressivos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q13" value="b"> Benzodiazepínicos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q13" value="c"> Antipsicóticos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q13" value="d"> Todas as classes têm início de ação semelhante.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">14. Além das alterações bioquímicas, os psicofármacos podem impactar quais aspectos do indivíduo?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q14" value="a"> Somente a reatividade emocional.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q14" value="b"> Aspectos cognitivos, comportamentais e emocionais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q14" value="c"> Exclusivamente a atenção e memória.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q14" value="d"> Apenas a velocidade de processamento.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">15. Qual dos seguintes fatores farmacocinéticos pode causar variabilidade individual na resposta aos psicofármacos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q15" value="a"> Polimorfismos em receptores neurais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q15" value="b"> Variações genéticas nas enzimas metabolizadoras (CYP450).
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q15" value="c"> Diferenças na plasticidade sináptica.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q15" value="d"> Adaptações compensatórias variáveis.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="abordagem-diagnostica" class="faq-page-content">
+          <h3>Abordagem Diagnóstica</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="a">16. Qual a principal característica do diagnóstico descritivo em psicopatologia?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q16" value="a"> É baseado em sintomas observáveis e relatados, independente de teorias etiológicas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q16" value="b"> Integra biomarcadores e fatores dimensionais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q16" value="c"> Considera trajetórias desenvolvimentais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q16" value="d"> É criticado por sua complexidade e aplicabilidade clínica limitada.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">17. O que é uma crítica comum ao diagnóstico descritivo, segundo o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q17" value="a"> Facilita a comunicação entre profissionais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q17" value="b"> Pode levar à fragmentação excessiva e artificialidade das categorias.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q17" value="c"> É fundamental para o planejamento terapêutico.
+                </label>
+              </li>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q17" value="d"> Incorpora biomarcadores.
+              </label>
+            </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">18. O diagnóstico híbrido busca integrar quais fontes de dados para superar as limitações do modelo puramente descritivo?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q18" value="a"> Apenas avaliação clínica tradicional.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q18" value="b"> Avaliação clínica, biomarcadores, avaliação neuropsicológica e histórico desenvolvimental.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q18" value="c"> Somente biomarcadores e perfil genético.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q18" value="d"> Exclusivamente a resposta prévia a tratamentos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">19. Na tríade diagnóstica FIP, o que a "Frequência" se refere?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q19" value="a"> A magnitude dos sintomas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q19" value="b"> A recorrência e o padrão temporal dos sintomas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q19" value="c"> O impacto funcional na vida do indivíduo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q19" value="d"> O sofrimento subjetivo associado.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">20. Para um diagnóstico válido, segundo a aplicação da tríade FIP na avaliação clínica, o que é necessário em relação ao "Prejuízo"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q20" value="a"> Que seja apenas um sofrimento subjetivo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q20" value="b"> Que haja prejuízo funcional mensurável em pelo menos uma área importante da vida.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q20" value="c"> Que não haja impacto funcional.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q20" value="d"> Que seja apenas um sintoma flutuante.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="transtornos-neurodesenvolvimento" class="faq-page-content">
+          <h3>Transtornos do Neurodesenvolvimento</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="b">21. Os transtornos do neurodesenvolvimento são condições que surgem em qual período?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q21" value="a"> Somente na vida adulta.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q21" value="b"> Durante o período de desenvolvimento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q21" value="c"> Exclusivamente na terceira idade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q21" value="d"> Após traumas cerebrais.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">22. Uma das comorbidades mais frequentes no Transtorno do Espectro Autista (TEA), mencionada no texto, é:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q22" value="a"> Transtorno Desafiador Opositivo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q22" value="b"> TDAH (em até 50% dos casos).
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q22" value="c"> Transtornos de aprendizagem.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q22" value="d"> Transtorno do uso de substâncias.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">23. Qual fator pode contribuir para o atraso diagnóstico em transtornos do neurodesenvolvimento?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q23" value="a"> Alta capacitação profissional para reconhecimento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q23" value="b"> Foco exclusivo no transtorno primário.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q23" value="c"> Manifestações homogêneas conforme o gênero.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q23" value="d"> Compensação por alta capacidade intelectual.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">24. Na abordagem farmacológica de transtornos do neurodesenvolvimento, qual princípio é fundamental?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q24" value="a"> Iniciar com doses altas para efeito rápido.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q24" value="b"> Monitorar cuidadosamente os efeitos colaterais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q24" value="c"> Ignorar as interações entre múltiplos medicamentos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q24" value="d"> Desconsiderar intervenções psicossociais.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">25. Para o Transtorno do Espectro Autista (TEA), quais psicofármacos são indicados com foco em irritabilidade e agressividade?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q25" value="a"> Estimulantes como metilfenidato.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q25" value="b"> Antidepressivos ISRSs.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q25" value="c"> Antipsicóticos como risperidona e aripiprazol.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q25" value="d"> Melatonina.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="papel-neuropsicologo" class="faq-page-content">
+          <h3>Papel do Neuropsicólogo</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="b">26. Antes do tratamento farmacológico, qual a contribuição da avaliação neuropsicológica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q26" value="a"> Detecção precoce de efeitos colaterais cognitivos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q26" value="b"> Estabelecimento de linha de base cognitiva.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q26" value="c"> Ajuste de intervenções complementares.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q26" value="d"> Monitoramento objetivo da resposta cognitiva.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">27. Qual o papel do neuropsicólogo no monitoramento farmacológico?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q27" value="a"> Prescrever a medicação.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q27" value="b"> Avaliar sistematicamente os efeitos cognitivos dos psicofármacos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q27" value="c"> Desenvolver programas de reabilitação motora.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q27" value="d"> Aconselhar sobre a dose do medicamento.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="perspectivas-futuras" class="faq-page-content">
+          <h3>Perspectivas Futuras</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="c">28. Qual tendência emergente é mencionada para a seleção individualizada de medicamentos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q28" value="a"> Neuromodulação.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q28" value="b"> Biomarcadores preditivos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q28" value="c"> Farmacogenética.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q28" value="d"> Terapia comportamental.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">29. Uma das competências futuras do neuropsicólogo destacadas no texto é:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q29" value="a"> A capacidade de ignorar achados científicos para a prática clínica.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q29" value="b"> Habilidade para atuar de forma isolada da equipe multidisciplinar.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q29" value="c"> Conhecimento atualizado sobre interações entre psicofármacos e cognição.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q29" value="d"> Foco exclusivo na avaliação de danos cerebrais.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="transtornos-personalidade-grupo-b" class="content-section" style="display: none;">
+        <h2>Transtornos de Personalidade do Grupo B</h2>
+
+        <div id="tp-antissocial-questions" class="faq-page-content">
+          <h3>Transtorno da Personalidade Antissocial</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="b">1. Qual é o padrão difuso central do Transtorno da Personalidade Antissocial, de acordo com o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q30" value="a"> Instabilidade nas relações, autoimagem e afetos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q30" value="b"> Desconsideração e violação dos direitos dos outros.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q30" value="c"> Emocionalidade e busca de atenção em excesso.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q30" value="d"> Grandiosidade, necessidade de admiração e falta de empatia.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">2. De acordo com as características diagnósticas essenciais do Transtorno da Personalidade Antissocial, qual das opções abaixo NÃO é um exemplo de "fracasso em conformidade com normas sociais"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q31" value="a"> Repetição de atos passíveis de detenção.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q31" value="b"> Destruir propriedade, assediar ou roubar.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q31" value="c"> Trapaça para ganho pessoal.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q31" value="d"> Medo intenso de abandono.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">3. Para o diagnóstico de Transtorno da Personalidade Antissocial, qual é a idade mínima exigida e qual evidência é necessária sobre o Transtorno da Conduta?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q32" value="a"> 16 anos e evidência de início antes dos 18 anos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q32" value="b"> 15 anos e evidência de início antes dos 12 anos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q32" value="c"> 18 anos e evidência de início antes dos 15 anos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q32" value="d"> Qualquer idade, desde que o comportamento persista na vida adulta.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">4. Qual é uma de suas características associadas ao Transtorno da Personalidade Antissocial, conforme o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q33" value="a"> Autoconceito inflado e arrogante.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q33" value="b"> Sentimentos crônicos de vazio.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q33" value="c"> Busca de atenção em excesso.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q33" value="d"> Exagero de conquistas e talentos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">5. A prevalência do Transtorno da Personalidade Antissocial na população geral varia de:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q34" value="a"> 1,4% a 5,9%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q34" value="b"> 0,0% a 1,8%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q34" value="c"> 0,6% a 3,6%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q34" value="d"> 0,0% a 6,2%.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">6. Em relação ao curso do Transtorno da Personalidade Antissocial, o que pode ocorrer na meia-idade?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q35" value="a"> Início dos comportamentos problemáticos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q35" value="b"> Desenvolvimento do Transtorno da Conduta.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q35" value="c"> Manifestações plenas do transtorno.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q35" value="d"> Pode "se tornar menos evidente ou apresentar remissão conforme o indivíduo envelhece, em particular por volta dos 40 anos de idade".
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">7. Qual a principal distinção diagnóstica entre Transtorno da Personalidade Antissocial e Transtornos por Uso de Substância, segundo o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q36" value="a"> Ambos exigem idade mínima de 18 anos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q36" value="b"> TP Antissocial não é feito a menos que os sinais estivessem presentes na infância e continuaram até a vida adulta.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q36" value="c"> Transtornos por Uso de Substância sempre precedem o TP Antissocial.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q36" value="d"> O comportamento criminal é exclusivo do TP Antissocial.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="tp-borderline-questions" class="faq-page-content">
+          <h3>Transtorno da Personalidade Borderline</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="b">8. Qual é o padrão difuso central do Transtorno da Personalidade Borderline?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q37" value="a"> Emocionalidade e busca de atenção em excesso.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q37" value="b"> Instabilidade nas relações interpessoais, autoimagem, afetos e impulsividade acentuada.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q37" value="c"> Grandiosidade, necessidade de admiração e falta de empatia.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q37" value="d"> Desconsideração e violação dos direitos dos outros.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">9. Quantos critérios são necessários para o diagnóstico do Transtorno da Personalidade Borderline, e qual deles NÃO é listado entre os principais?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q38" value="a"> 4 ou mais; Medo de abandono.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q38" value="b"> 5 ou mais; Sentimentos de vazio.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q38" value="c"> 5 ou mais; Comportamento suicida.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q38" value="d"> 5 ou mais; Busca excessiva de elogios por sua "superioridade".
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">10. Indivíduos com Transtorno da Personalidade Borderline podem idealizar cuidadores ou companheiros e, rapidamente, mudar para qual atitude?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q39" value="a"> Submissão crescente.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q39" value="b"> Busca por lucro ou poder.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q39" value="c"> Desvalorização.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q39" value="d"> Expressão exagerada das emoções.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">11. A prevalência do Transtorno da Personalidade Borderline na comunidade varia de:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q40" value="a"> 1,4% a 5,9%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q40" value="b"> 0,6% a 3,6%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q40" value="c"> 0,0% a 1,8%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q40" value="d"> 0,0% a 6,2%.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">12. Quais fatores ambientais são associados ao Transtorno da Personalidade Borderline?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q41" value="a"> Sucesso ilimitado e amor ideal.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q41" value="b"> Disciplina parental inconsistente.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q41" value="c"> Experiências de vida corretivas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q41" value="d"> Altas taxas de abuso infantil e negligência emocional.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">13. De acordo com o texto, qual é a principal diferença na manipulação entre TP Antissocial e TP Borderline?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q42" value="a"> TP Antissocial manipula para atenção, TP Borderline para lucro.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q42" value="b"> No TP Antissocial, a manipulação é para lucro/poder; no TP Borderline, para atenção dos cuidadores.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q42" value="c"> Ambos manipulam igualmente para obter reconhecimento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q42" value="d"> TP Antissocial não manipula, apenas viola direitos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">14. Qual a distinção na reação ao medo de abandono entre Transtorno da Personalidade Borderline e Transtorno da Personalidade Dependente?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q43" value="a"> TP Borderline reage com "sentimentos de vazio emocional, fúria e exigências"; TP Dependente com "calma e submissão crescentes e busca urgentemente um relacionamento substituto".
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q43" value="b"> Ambos reagem com automutilação.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q43" value="c"> TP Borderline não teme abandono, busca independência.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q43" value="d"> TP Dependente reage com raiva intensa e inapropriada.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="tp-histrionica-questions" class="faq-page-content">
+          <h3>Transtorno da Personalidade Histriônica</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="b">15. Qual é o padrão difuso central do Transtorno da Personalidade Histriônica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q44" value="a"> Desconsideração e violação dos direitos dos outros.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q44" value="b"> Emocionalidade e busca de atenção em excesso.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q44" value="c"> Instabilidade nas relações, autoimagem e afetos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q44" value="d"> Grandiosidade, necessidade de admiração e falta de empatia.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">16. Um dos critérios diagnósticos do Transtorno da Personalidade Histriônica é o "comportamento sedutor". Como ele é caracterizado?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q45" value="a"> Uso de sedução apenas em contextos românticos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q45" value="b"> Sedução para ganho financeiro.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q45" value="c"> Interação caracterizada por comportamento sexualmente sedutor ou provocativo inadequado.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q45" value="d"> Comportamento sedutor para manipular figuras de autoridade.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">17. Qual característica da emocionalidade é observada no Transtorno da Personalidade Histriônica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q46" value="a"> Estabilidade emocional persistente.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q46" value="b"> Emoções sentidas em profundidade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q46" value="c"> Dificuldade em expressar emoções.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q46" value="d"> Expressão emocional superficial e rapidamente cambiante.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">18. Como é descrito o "discurso impressionista" no Transtorno da Personalidade Histriônica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q47" value="a"> Discurso excessivamente detalhado e factual.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q47" value="b"> Estilo de discurso excessivamente impressionista e carente de detalhes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q47" value="c"> Discurso direto e objetivo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q47" value="d"> Discurso focado em suas conquistas e talentos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">19. Em relação às "relações distorcidas" no Transtorno da Personalidade Histriônica, como são percebidas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q48" value="a"> Relações percebidas como distantes e impessoais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q48" value="b"> Dificuldade em formar relações íntimas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q48" value="c"> Considera as relações pessoais mais íntimas do que na realidade são.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q48" value="d"> Manipula relações para obter lucro.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">20. Qual a distinção principal entre Transtorno da Personalidade Histriônica e Transtorno da Personalidade Borderline no que tange à autodestrutividade e raiva?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q49" value="a"> Histriônico é distinguido pela ausência de "autodestrutividade, pelos rompantes de raiva nos relacionamentos íntimos e pelos sentimentos crônicos de vazio profundo e perturbação da identidade."
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q49" value="b"> Borderline não apresenta busca por atenção, ao contrário do Histriônico.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q49" value="c"> Ambos apresentam os mesmos níveis de autodestrutividade e raiva.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q49" value="d"> Histriônico tem mais autodestrutividade, Borderline menos raiva.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">21. Qual a diferença na busca por atenção entre Transtorno da Personalidade Narcisista e Transtorno da Personalidade Histriônica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q50" value="a"> Narcisistas buscam ser vistos como frágeis, Histriônicos como superiores.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q50" value="b"> Narcisistas "querem elogios por sua 'superioridade"; Histriônicos desejam "ser vistas como frágeis ou dependentes caso isso sirva para a obtenção de atenção."
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q50" value="c"> Ambos buscam elogios pela sua "superioridade".
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q50" value="d"> Narcisistas não buscam atenção, apenas reconhecimento.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="tp-narcisista-questions" class="faq-page-content">
+          <h3>Transtorno da Personalidade Narcisista</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="d">22. Qual é o padrão difuso central do Transtorno da Personalidade Narcisista?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q51" value="a"> Emocionalidade e busca de atenção em excesso.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q51" value="b"> Instabilidade nas relações, autoimagem e afetos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q51" value="c"> Desconsideração e violação dos direitos dos outros.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q51" value="d"> Grandiosidade (em fantasia ou comportamento), necessidade de admiração e falta de empatia.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">23. Quantos critérios são necessários para o diagnóstico do Transtorno da Personalidade Narcisista, e qual NÃO é listado entre os principais na seção de critérios?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q52" value="a"> 5 ou mais; Comportamento sedutor.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q52" value="b"> 5 ou mais; Grandiosidade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q52" value="c"> 5 ou mais; Falta de empatia.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q52" value="d"> 5 ou mais; Sentimento de possuir direitos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">24. De acordo com o texto, qual é a principal fragilidade da autoestima em indivíduos com Transtorno da Personalidade Narcisista?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q53" value="a"> É estável e não afeta a busca por admiração.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q53" value="b"> É baseada em sucessos reais e não em fantasias.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q53" value="c"> É quase invariavelmente muito frágil, resultando na necessidade de buscar ativamente a admiração dos outros.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q53" value="d"> É mantida por um forte senso de superioridade inabalável.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">25. Como o sentimento de "posse de direitos" se manifesta no Transtorno da Personalidade Narcisista?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q54" value="a"> Expectativas realistas de tratamento justo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q54" value="b"> Expectativas irracionais de tratamento especialmente favorável.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q54" value="c"> Busca por servir e ajudar os outros.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q54" value="d"> Sentimento de que suas necessidades são comuns às pessoas.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">26. Qual é a porcentagem de homens diagnosticados com Transtorno da Personalidade Narcisista, conforme o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q55" value="a"> 25 a 50%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q55" value="b"> Inferior a 50%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q55" value="c"> 50 a 75%.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q55" value="d"> Taxas similares entre homens e mulheres.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">27. Em comparação com tentativas de suicídio em outros transtornos da personalidade, as tentativas em indivíduos com Transtorno da Personalidade Narcisista são caracterizadas por:</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q56" value="a"> Maior impulsividade e menor letalidade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q56" value="b"> Exclusivamente em momentos de grandiosidade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q56" value="c"> Sempre menos impulsivas, mas com a mesma letalidade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q56" value="d"> Menos impulsivas e com maior letalidade.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="comparacao-grupo-b" class="faq-page-content">
+          <h3>Comparação dos Transtornos de Personalidade do Grupo B</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="a">28. Qual Transtorno de Personalidade do Grupo B é caracterizado por "Desconsideração pelos direitos dos outros, manipulação para lucro/poder, ausência de remorso, impulsividade, agressividade, falsidade"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q57" value="a"> Antissocial
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q57" value="b"> Borderline
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q57" value="c"> Histriônica
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q57" value="d"> Narcisista
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">29. Qual Transtorno de Personalidade do Grupo B é descrito por "Busca excessiva de atenção, comportamento sedutor, emocionalidade superficial, teatralidade, sugestionabilidade, discurso impressionista"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q58" value="a"> Antissocial
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q58" value="b"> Borderline
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q58" value="c"> Histriônica
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q58" value="d"> Narcisista
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="principais-transtornos" class="content-section" style="display: none;">
+        <h2>Principais Transtornos e Condições Mentais</h2>
+
+        <div class="faq-page-content">
+          <h3>Introdução à Psicopatologia</h3>
+          <div class="question-block">
+            <h4 data-correct-answer="b">1. Qual o principal objetivo da apresentação sobre Psicopatologia?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q59" value="a"> Apresentar apenas os fundamentos da psicopatologia.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q59" value="b"> Explorar os transtornos e condições mentais, seus sintomas, manifestações clínicas, impactos e abordagens de tratamento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q59" value="c"> Discutir somente os impactos dos transtornos mentais na vida dos indivíduos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q59" value="d"> Focar exclusivamente nas abordagens de tratamento.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">2. De acordo com Hans Jörg Weitbrecht, em quantas perspectivas fundamentais a psicopatologia organiza as vivências psicopatológicas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q60" value="a"> Uma.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q60" value="b"> Duas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q60" value="c"> Três.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q60" value="d"> Quatro.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">3. O que são os "transfundos ou ancoragens das vivências psicopatológicas"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q61" value="a"> Sintomas específicos e individualizáveis que o paciente experimenta.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q61" value="b"> Eventos que ocorrem em proximidade temporal ao surgimento dos sintomas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q61" value="c"> Um cenário amplo onde os sintomas específicos se manifestam, moldando seu significado e natureza.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q61" value="d"> Transformações lentas e insidiosas da personalidade.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">4. Qual a relação dialética entre o sintoma emergente e seu transfundo?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q62" value="a"> O sintoma isolado pode ser compreendido plenamente sem o contexto.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q62" value="b"> Não é possível compreender plenamente um sintoma isolado sem levar em conta o seu contexto mais amplo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q62" value="c"> O transfundo é irrelevante para a compreensão do sintoma.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q62" value="d"> A relação é unidirecional, do sintoma para o transfundo.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">5. Quais são os dois tipos principais de transfundos mencionados?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q63" value="a"> Estáticos e Dinâmicos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q63" value="b"> Estáveis e Mutáveis.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q63" value="c"> Primários e Secundários.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q63" value="d"> Biológicos e Ambientais.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">6. Que tipo de transfundo é representado pela personalidade e inteligência, e determina os contornos e a profundidade dos sintomas psicopatológicos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q64" value="a"> Transfundos Mutáveis.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q64" value="b"> Transfundos Inerentes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q64" value="c"> Transfundos Estáveis.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q64" value="d"> Transfundos Momentâneos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">7. Como pacientes muito inteligentes podem manifestar delírios, de acordo com a influência da inteligência nos transfundos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q65" value="a"> Com quadros psicopatológicos indiscriminados e menos detalhes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q65" value="b"> De forma passiva e sem energia.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q65" value="c"> Produzindo delírios ricos e complexos, interpretando constantemente suas vivências.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q65" value="d"> Com manifestações plenas do transtorno na meia-idade.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">8. O que os sintomas emergentes ou específicos representam na psicopatologia?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q66" value="a"> As vivências psicopatológicas mais destacadas e individualizáveis que o paciente experimenta.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q66" value="b"> O contexto mais amplo onde os sintomas se manifestam.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q66" value="c"> Fatores genéticos e constitucionais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q66" value="d"> Eventos de vida estressantes.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">9. Qual o primeiro componente do surgimento dos transtornos mentais, que precede o início da vida de relações de um sujeito?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q67" value="a"> Fatores Precipitantes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q67" value="b"> Manifestação do Transtorno.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q67" value="c"> Vulnerabilidade Constitucional.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q67" value="d"> Fatores Predisponentes.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">10. Qual a relação entre os fatores predisponentes e os fatores precipitantes na vulnerabilidade das pessoas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q68" value="a"> Fatores predisponentes ignoram a ação dos fatores precipitantes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q68" value="b"> Fatores predisponentes tornam as pessoas mais ou menos vulneráveis para a ação dos fatores precipitantes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q68" value="c"> Fatores precipitantes sempre superam os fatores predisponentes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q68" value="d"> Não há relação entre eles, atuam de forma independente.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">11. No contexto da manifestação dos transtornos mentais, o que é "Patoplastia"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q69" value="a"> Fator patogenético relacionado aos sintomas diretamente produzidos pelo transtorno mental de base.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q69" value="b"> Eventos e reações do indivíduo e do meio psicossocial posteriores ao adoecer.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q69" value="c"> Manifestações relacionadas à personalidade pré-mórbida, história de vida e padrões culturais prévios ao adoecimento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q69" value="d"> A transformação lenta e insidiosa da personalidade de natureza endógena.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">12. Segundo a concepção psicopatológica, com base na patologia geral e na escola jasperiana, quais são os dois tipos de cursos longitudinais dos transtornos mentais crônicos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q70" value="a"> Crise e Reação vivencial.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q70" value="b"> Fase e Surto.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q70" value="c"> Processo e Desenvolvimento.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q70" value="d"> Remissão e Recorrência.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">13. O que caracteriza um "Surto" na evolução dos quadros psiquiátricos agudos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q71" value="a"> Surgimento e término abruptos, com duração de segundos ou minutos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q71" value="b"> Fenômeno psicologicamente compreensível, desencadeado por eventos vitais significativos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q71" value="c"> Ocorrência aguda que se instala de forma mais ou menos repentina, fazendo eclodir uma doença de base endógena e produzindo sequelas irreversíveis.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q71" value="d"> Períodos de depressão e de mania dos transtornos afetivos, com retorno ao estado anterior.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="a">14. Qual a diferença entre "Recaída ou Recidiva" e "Recorrência"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q72" value="a"> Recaída é o retorno dos sintomas logo após haver ocorrido melhora parcial do quadro clínico ou quando o estado assintomático é ainda recente; Recorrência é o surgimento de um novo episódio, depois de o indivíduo apresentar-se assintomático por um bom período.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q72" value="b"> Recorrência é o retorno dos sintomas após melhora parcial; Recaída é um novo episódio da doença.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q72" value="c"> Recaída e Recorrência são termos sinônimos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q72" value="d"> Recaída ocorre após um ano de remissão; Recorrência ocorre em menos de um ano.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">15. Qual o "Primeiro Nível (Neurológico)" na contextualização do sintoma, e como ele se relaciona com o cerebral e o cultural?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q73" value="a"> Sintomas afetivos secundários, com relação íntima com o biográfico e cultural.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q73" value="b"> Condições neuropsicológicas, com relação íntima com o plano cerebral, mas com influência cultural.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q73" value="c"> Delírio, alucinações, obsessões, com relação mais equilibrada entre o biológico e o cultural.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q73" value="d"> Sintomas sensitivo-motores da neurologia clássica, com relação muito íntima com o plano biológico, universal e pouca plasticidade.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">16. O que são "agrupamentos estáveis de sintomas" na psicopatologia?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q74" value="a"> Sintomas isolados que não se agrupam.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q74" value="b"> Conjuntos de sinais e sintomas que se agrupam de forma recorrente e são observados na prática clínica diária.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q74" value="c"> Sintomas que possuem uma única causa específica.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q74" value="d"> Apenas os sintomas periféricos de um quadro clínico.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">17. Na "teoria dos quadros clínicos", qual a diferença entre "sintomas nucleares" e "sintomas periféricos"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q75" value="a"> Sintomas nucleares são secundários; sintomas periféricos são as alterações de nível de consciência.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q75" value="b"> Sintomas nucleares são as alterações primárias e centrais (ex: alteração de nível de consciência no delirium); sintomas periféricos articulam-se hierarquicamente de forma secundária aos nucleares.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q75" value="c"> Sintomas nucleares e periféricos são sinônimos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q75" value="d"> Sintomas nucleares não são observados na prática clínica.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">18. Qual a prevalência global de transtornos mentais na população mundial, ao longo da vida e nos últimos 12 meses, de acordo com dados de 2022?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q76" value="a"> 18,1% ao longo da vida e 30,5% nos últimos 12 meses.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q76" value="b"> 30,5% ao longo da vida e 18,1% nos últimos 12 meses.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q76" value="c"> 45,9% ao longo da vida e 31,2% nos últimos 12 meses.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q76" value="d"> 44,8% ao longo da vida e 33,1% nos últimos 12 meses.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">19. Quais são os três transtornos mentais mais frequentes na população brasileira, e suas respectivas prevalências nos últimos 12 meses, conforme pesquisas científicas?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q77" value="a"> Fobia social (21,4%), Transtornos de ansiedade (11,2%), Depressão maior (10,1%).
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q77" value="b"> Depressão maior (21,4%), Fobia específica (11,2%), Transtornos de ansiedade (10,1%).
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q77" value="c"> Transtornos de ansiedade (21,4%), Fobia específica (11,2%), Depressão maior (10,1%).
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q77" value="d"> Transtornos de ansiedade (10,1%), Fobia específica (21,4%), Depressão maior (11,2%).
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">20. Qual a prevalência global da depressão maior ao longo da vida e nos últimos 12 meses, e o que a depressão pode aumentar o risco em 20 vezes?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q78" value="a"> 4,4% ao longo da vida, 16,6% nos últimos 12 meses; risco de doenças crônicas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q78" value="b"> 16,6% ao longo da vida, 4,4% nos últimos 12 meses; risco de suicídio.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q78" value="c"> 4,7% ao longo da vida, 4,4% nos últimos 12 meses; risco de problemas sociais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q78" value="d"> 16,6% ao longo da vida, 4,7% nos últimos 12 meses; risco de abuso de substâncias.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">21. Qual dos seguintes não é um sintoma comum da depressão na esfera da volição e psicomotricidade?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q79" value="a"> Anedonia (incapacidade de sentir prazer).
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q79" value="b"> Lentificação psicomotora.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q79" value="c"> Aumento da fala em tom alto.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q79" value="d"> Desânimo, diminuição da vontade (hipobulia).
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">22. De acordo com o texto, quais são os principais aspectos neurobiológicos associados à depressão?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q80" value="a"> Aumento do volume do hipocampo e aumento da área cinzenta.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q80" value="b"> Redução do volume do hipocampo, redução de área cinzenta em várias regiões, alterações em circuitos pré-frontal-límbicos e alterações na atividade de sistemas neurais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q80" value="c"> Apenas alterações na atividade de sistemas neurais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q80" value="d"> Exclusivamente alterações em circuitos pré-frontal-límbicos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">23. Qual a principal diferença no conteúdo do pensamento entre Luto Intenso e Depressão?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q81" value="a"> Luto: pensamentos de culpa sobre a perda; Depressão: pensamentos de melhora com o tempo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q81" value="b"> Luto: tristeza centrada em pensamentos relacionados à pessoa perdida; Depressão: ruminações autocríticas e pessimistas abrangentes.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q81" value="c"> Luto: "Nada na vida vale a pena"; Depressão: "Por que não disse à pessoa que perdi o quanto a amava?".
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q81" value="d"> Não há diferença no conteúdo do pensamento.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">24. O que caracteriza a "Depressão atípica" como subtipo de transtorno depressivo?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q82" value="a"> Perda de prazer em todas as atividades e falta de reatividade a estímulos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q82" value="b"> Reatividade do humor aumentada, ganho de peso, hipersonia, sensação de corpo pesado e sensibilidade à rejeição.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q82" value="c"> Depressão muito grave com sintomas psicóticos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q82" value="d"> Lentificação psicomotora e mutismo.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="d">25. Em qual das seguintes doenças somáticas a depressão apresenta a maior frequência (85%)?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q83" value="a"> Doença de Parkinson.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q83" value="b"> Hipertireoidismo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q83" value="c"> Doença de Alzheimer.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q83" value="d"> Doença de Cushing.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">26. Qual é a base da mania, de acordo com o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q84" value="a"> Sintomas de tristeza profunda e anedonia.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q84" value="b"> Sintomas de euforia, alegria exacerbada, elação (expansão do Eu), grandiosidade ou irritabilidade marcante.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q84" value="c"> Apenas agitação psicomotora.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q84" value="d"> Diminuição da necessidade de sono sem outros sintomas.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">27. Um dos sintomas da mania é a "Diminuição da Necessidade de Sono". Como isso se manifesta?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q85" value="a"> O paciente dorme pouco e se queixa de cansaço.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q85" value="b"> O paciente dorme pouco (3 a 4 horas por noite), mas sem queixas de que isso o afete.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q85" value="c"> O paciente apresenta insônia grave e duradoura.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q85" value="d"> O paciente tem hipersonia e sonolência diurna.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">28. No Transtorno Bipolar, qual a idade média de início e a chance de recorrência após um primeiro episódio de mania ou depressão bipolar nos próximos cinco anos?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q86" value="a"> Idade média de 25 anos; 37% de recorrência.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q86" value="b"> Idade média de 21 anos; 87% de recorrência.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q86" value="c"> Idade média de 30 anos; 65,4% de recorrência.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q86" value="d"> Idade média de 18 anos; 40 a 70% de recorrência.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">29. O que diferencia o Transtorno Bipolar Tipo I do Tipo II?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q87" value="a"> O Tipo I apresenta apenas episódios depressivos, enquanto o Tipo II tem fases maníacas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q87" value="b"> O Tipo I deve ter pelo menos uma fase maníaca bem caracterizada, enquanto o Tipo II apresenta apenas fases hipomaníacas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q87" value="c"> O Tipo I tem ciclagem rápida, e o Tipo II não.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q87" value="d"> Ambos os tipos apresentam os mesmos sintomas, apenas a intensidade varia.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">30. Qual a prevalência dos transtornos ansiosos no Brasil, nos últimos 12 meses, e pelo menos uma vez na vida, de acordo com estudos epidemiológicos em São Paulo e Rio de Janeiro?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q88" value="a"> 11 a 18% nos últimos 12 meses e 17 a 30% na vida.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q88" value="b"> 18,8 a 20,8% nos últimos 12 meses e 27,7 a 30,8% na vida.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q88" value="c"> 27,7 a 30,8% nos últimos 12 meses e 18,8 a 20,8% na vida.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q88" value="d"> 1,6 a 2,7% nos últimos 12 meses e 14,6 a 16,8% na vida.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">31. O que são as "Crises de Ansiedade" ou "Crises de Pânico" e qual a sua duração típica?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q89" value="a"> Sintomas ansiosos excessivos que duram vários meses; chegam ao pico em 5 a 10 minutos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q89" value="b"> Crises intermitentes com vários sintomas ansiosos em intensidade significativa; duração de 15 minutos, raramente mais de 1 hora.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q89" value="c"> Medo intenso e persistente de situações sociais; duram horas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q89" value="d"> Apenas taquicardia e suor frio; duração de segundos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">32. Quais são os principais sintomas do Transtorno de Estresse Pós-Traumático (TEPT)?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q90" value="a"> Humor deprimido e perda de interesse.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q90" value="b"> Lembranças vívidas que invadem a consciência (flashbacks), intensa sensação física e/ou sentimentos do evento traumático, evitação de pensamentos/atividades relacionadas ao trauma e estado de contínua sensação de ameaça e hipervigilância.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q90" value="c"> Aceleração das funções psíquicas e delírios de grandeza.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q90" value="d"> Comportamentos repetitivos e rituais compulsivos.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">33. Qual a principal característica dos "Quadros obsessivo-compulsivos"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q91" value="a"> Medo intenso de situações sociais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q91" value="b"> Ideias, fantasias e imagens obsessivas e por atos, rituais ou comportamentos compulsivos, vividos como uma pressão sobre o indivíduo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q91" value="c"> Alterações das funções sensoriais ou motoras que lembram sintomas neurológicos.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q91" value="d"> Experiências como alucinações e delírios sem desorganização do pensamento.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="c">34. O que é "Somatização" de acordo com o texto?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q92" value="a"> Processo pelo qual o indivíduo padece de sintomas físicos com origem exclusiva em uma doença física.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q92" value="b"> Condição na qual pacientes relatam dores corporais difusas.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q92" value="c"> Processo pelo qual um indivíduo padece em seu corpo sintomas físicos, que não têm origem exclusiva em uma doença física, mas se relacionam a dificuldades psicológicas, psicossociais ou interpessoais.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q92" value="d"> Cansaço ou fadiga persistentes e relevantes sem diagnóstico de doença física ou mental.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">35. O que caracteriza os "Quadros Psicóticos"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q93" value="a"> Apenas um humor triste e desânimo.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q93" value="b"> Experiências como alucinações e delírios, desorganização marcante do pensamento e/ou do comportamento ou comportamento catatônico, e intensa sensação de perseguição ou ameaça.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q93" value="c"> Medo intenso de abandono e instabilidade nas relações.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q93" value="d"> Exclusivamente alterações na esfera motora.
+                </label>
+              </li>
+            </ol>
+          </div>
+
+          <div class="question-block">
+            <h4 data-correct-answer="b">36. Quais são as características dos "Quadros de Estupor e/ou Catatonia"?</h4>
+            <ol type="a">
+              <li>
+                <label>
+                  <input type="radio" name="q94" value="a"> Acentuada aceleração da esfera motora e aumento da excitabilidade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q94" value="b"> Imobilidade, ausência de reatividade e sintomas como mutismo e negativismo, geralmente com preservação do nível da consciência.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q94" value="c"> Sintomas depressivos com marcante componente de ansiedade.
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="q94" value="d"> Comportamento sedutor e emocionalidade superficial.
+                </label>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
   <footer class="rodape">
     <p>Netto© 2025 - Todos os direitos reservados.</p>
   </footer>
+
+  <script defer src="script.js"></script>
 </body>
 </html>
