@@ -23,14 +23,10 @@
   --fonte-secundaria: 'Open Sans', sans-serif;
   
   --cor-radio-borda: var(--cor-cinza-claro);
-  --cor-radio-check: var(--cor-destaque); /* Alterado para cor de destaque para consistência */
-  --cor-acerto: #4CAF50; /* Verde padrão */
-  --cor-erro: #F44336; /* Vermelho padrão */
+  --cor-radio-check: var(--cor-destaque);
+  --cor-acerto: #4CAF50;
+  --cor-erro: #F44336;
 }
-
-/* Importar fontes do Google Fonts (adicione ao seu HTML na seção <head>) */
-/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> */
-
 
 /* Reset Básico e Box-sizing */
 * {
@@ -41,17 +37,16 @@
 
 html, body {
     height: 100%;
-    /* overflow: hidden; */ /* Removido para permitir rolagem natural em navegadores */
 }
 
 body {
   font-family: var(--fonte-secundaria);
-  background-color: var(--cor-secundaria); /* Fundo principal claro */
-  color: var(--cor-texto-principal); /* Texto principal escuro */
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-principal);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+  min-height: 100vh;
 }
 
 .layout-container {
@@ -60,37 +55,36 @@ body {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: var(--cor-branco); /* Container branco */
+  background-color: var(--cor-branco);
   color: var(--cor-texto-principal);
-  /* height: 100%; */ /* Removido, flex:1 já cuida da altura */
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Sombra mais leve para o container geral */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-borda);
-  overflow: hidden; /* Mantido para conter elementos flutuantes/com overflow interno */
+  overflow: hidden;
 }
 
-/* SIDEBAR (Coluna Esquerda - FIXA) */
+/* SIDEBAR (Coluna Esquerda - FIXA no desktop) */
 .sidebar {
-  width: 320px; /* Aumentado para 320px */
-  background: var(--cor-primaria); /* Sidebar azul clara */
-  color: var(--cor-texto-claro); /* Texto branco em fundos escuros */
-  padding: 2.5rem 1.5rem; /* Mais padding vertical */
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2); /* Sombra lateral */
+  width: 320px;
+  background: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+  padding: 2.5rem 1.5rem;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   flex-shrink: 0;
-  position: fixed; /* Mantido fixo para desktop */
+  position: fixed; /* Fixo para telas maiores */
   top: 0;
   left: 0;
-  height: 100vh; /* Ocupa 100% da altura da viewport */
-  overflow-y: auto; /* Permite rolagem na sidebar se o conteúdo for muito longo */
+  height: 100vh;
+  overflow-y: auto;
   z-index: 1000;
   -webkit-overflow-scrolling: touch;
 }
 
 .profile-section {
-  margin-bottom: 3rem; /* Mais espaço */
+  margin-bottom: 3rem;
 }
 
 .foto {
@@ -98,8 +92,8 @@ body {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid var(--cor-branco); /* Borda branca na foto */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra na foto */
+  border: 5px solid var(--cor-branco);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -111,71 +105,69 @@ body {
 
 .titulo {
   font-family: var(--fonte-principal);
-  font-size: 2rem; /* Mais destaque */
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.8rem; /* Mais espaço */
-  color: var(--cor-texto-claro); /* Título claro na sidebar */
+  margin-bottom: 0.8rem;
+  color: var(--cor-texto-claro);
   line-height: 1.2;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto sutil */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .crp {
-  font-size: 1rem; /* Más visível */
+  font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 2rem; /* Más espacio */
+  margin-bottom: 2rem;
   font-weight: 400;
-  color: var(--cor-texto-claro); /* CRP claro na sidebar */
+  color: var(--cor-texto-claro);
 }
 
-/* Menu de Navegação Principal na Sidebar */
 .main-nav {
   width: 100%;
-  margin-bottom: 3rem; /* Más espacio */
+  margin-bottom: 3rem;
 }
 
 .nav-button {
   display: block;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil transparente */
-  color: var(--cor-texto-claro); /* Texto claro no botón */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--cor-texto-claro);
   border: none;
-  padding: 1.1rem 1.4rem; /* Más padding */
+  padding: 1.1rem 1.4rem;
   border-radius: var(--radius-borda);
   cursor: pointer;
   font-family: var(--fonte-principal);
   font-weight: 600;
-  font-size: 1.1rem; /* Más visible */
+  font-size: 1.1rem;
   text-align: left;
   transition: all 0.3s ease;
-  margin-bottom: 0.7rem; /* Más espaçamento */
+  margin-bottom: 0.7rem;
   box-shadow: var(--sombra-leve);
-  white-space: nowrap; /* Evita quebra de linha em nomes de botões longos */
-  overflow: hidden; /* Oculta o que transborda */
-  text-overflow: ellipsis; /* Adiciona reticências */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-button.ativa {
-  background-color: var(--cor-branco); /* Branco puro para botón activo */
-  color: var(--cor-primaria); /* Texto azul primário para activo */
+  background-color: var(--cor-branco);
+  color: var(--cor-primaria);
   box-shadow: var(--sombra-media);
   transform: translateX(8px);
-  border-left: 6px solid var(--cor-destaque); /* Borda laranja para activo */
+  border-left: 6px solid var(--cor-destaque);
   padding-left: calc(1.4rem - 6px);
 }
 
 .nav-button:hover:not(.ativa) {
-  background-color: rgba(255, 255, 255, 0.2); /* Más transparente no hover */
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateX(4px);
   box-shadow: var(--sombra-media);
 }
 
-/* Informações "Sobre Mim" na Sidebar */
 .sidebar-info {
   width: 100%;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Divisor claro */
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   text-align: left;
-  margin-top: auto; /* Empurra para o fundo da sidebar */
+  margin-top: auto;
 }
 
 .sidebar-info h3 {
@@ -183,19 +175,18 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
-  color: var(--cor-texto-claro); /* Título claro */
+  color: var(--cor-texto-claro);
   text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar-info p {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--cor-texto-claro); /* Texto claro */
+  color: var(--cor-texto-claro);
   margin-bottom: 1rem;
   opacity: 0.95;
 }
 
-/* BOTÃO WHATSAPP na Sidebar */
 .botao-contato {
   display: inline-block;
   margin-top: 2.5rem;
@@ -213,7 +204,7 @@ body {
 }
 
 .botao-contato:hover {
-  background-color: #1DA852; /* Tom mais escuro de verde */
+  background-color: #1DA852;
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
 }
@@ -221,49 +212,46 @@ body {
 
 /* MAIN CONTENT (Coluna Direita - ROLÁVEL) */
 .main-content {
-  margin-left: 320px; /* Compensado para a nova largura da sidebar */
+  margin-left: 320px; /* Compensado pela largura da sidebar */
   flex: 1;
   padding: 3rem;
-  overflow-y: auto; /* Permite rolagem no conteúdo principal */
-  background-color: var(--cor-secundaria); /* Fundo principal claro */
-  color: var(--cor-texto-principal); /* Texto principal escuro */
-  height: 100vh; /* Ocupa 100% da altura da viewport */
+  overflow-y: auto;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-principal);
+  height: 100vh;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Seções de conteúdo (Materiais, Tópicos, FAQ) */
 .content-section {
-  background-color: var(--cor-branco); /* Fundo branco para cards de conteúdo */
+  background-color: var(--cor-branco);
   padding: 3rem 3.5rem;
   border-radius: var(--radius-borda);
   box-shadow: var(--sombra-media);
   transition: all 0.4s ease;
-  border: 1px solid var(--cor-quartenaria); /* Borda sutil */
-  margin-bottom: 2.5rem; /* Adicionado margem inferior aqui para consistência */
+  border: 1px solid var(--cor-quartenaria);
+  margin-bottom: 2.5rem;
 }
 
 .content-section:last-of-type {
-    margin-bottom: 0; /* Remove margem inferior da última seção para evitar espaço extra antes do footer */
+    margin-bottom: 0;
 }
 
 .content-section:hover {
     box-shadow: var(--sombra-elevada);
-    border-color: var(--cor-primaria); /* Borda colorida no hover */
+    border-color: var(--cor-primaria);
 }
 
-
-/* Títulos de Seção no MAIN CONTENT */
 .content-section h2 {
   font-family: var(--fonte-principal);
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--cor-destaque); /* Laranja vibrante */
+  color: var(--cor-destaque);
   text-align: center;
   margin-bottom: 3.2rem;
   position: relative;
   padding-bottom: 1rem;
   letter-spacing: 0.8px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Sombra de texto mais sutil em fundo claro */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .content-section h2::after {
@@ -278,7 +266,6 @@ body {
   border-radius: 3px;
 }
 
-
 /* SEÇÃO DE MATERIAIS DA AULA */
 .materiais {
   display: grid;
@@ -289,7 +276,7 @@ body {
 }
 
 .materiais li {
-  background-color: var(--cor-terciaria); /* Fundo dos cards de materiais */
+  background-color: var(--cor-terciaria);
   padding: 2.2rem;
   border-radius: var(--radius-borda);
   box-shadow: var(--sombra-leve);
@@ -299,20 +286,20 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid var(--cor-quartenaria); /* Borda sutil */
+  border: 1px solid var(--cor-quartenaria);
 }
 
 .materiais li:hover {
   transform: translateY(-8px);
   box-shadow: var(--sombra-elevada);
-  background-color: var(--cor-branco); /* Fica branco no hover */
+  background-color: var(--cor-branco);
   border-color: var(--cor-destaque);
 }
 
 .materiais a {
   font-family: var(--fonte-principal);
   font-weight: 600;
-  color: var(--cor-texto-principal); /* Texto principal para links */
+  color: var(--cor-texto-principal);
   text-decoration: none;
   font-size: 1.2rem;
   display: flex;
@@ -322,10 +309,6 @@ body {
 }
 
 .materiais a::before {
-  /* Assumindo que os ícones estão sendo adicionados via JS ou HTML com classes específicas */
-  /* Se forem Font Awesome, as classes 'fas fa-file-pdf', 'fas fa-book' já definem o conteúdo. */
-  /* Este seletor genérico pode causar problemas se o Font Awesome não for usado assim. */
-  /* O melhor é usar as classes Font Awesome diretamente nos elementos <a> ou <span>. */
   font-size: 1.6rem;
   margin-right: 0.8rem;
   color: var(--cor-destaque);
@@ -339,9 +322,9 @@ body {
 }
 
 .topico {
-  background-color: var(--cor-branco); /* Fundo dos tópicos branco */
+  background-color: var(--cor-branco);
   padding: 1.8rem 2rem;
-  border-left: 8px solid var(--cor-primaria); /* Borda azul primária */
+  border-left: 8px solid var(--cor-primaria);
   border-radius: var(--radius-borda);
   box-shadow: var(--sombra-media);
   transition: all 0.3s ease;
@@ -350,20 +333,19 @@ body {
   text-decoration: none;
   color: var(--cor-texto-principal);
   display: block;
-  border: 1px solid var(--cor-quartenaria); /* Borda sutil */
-  line-height: 1.4; /* Melhora a legibilidade de textos mais longos */
+  border: 1px solid var(--cor-quartenaria);
+  line-height: 1.4;
 }
 
 .topico:hover {
-  background-color: var(--cor-terciaria); /* Fundo cinza claro no hover */
+  background-color: var(--cor-terciaria);
   transform: translateY(-6px);
   box-shadow: var(--sombra-elevada);
-  border-left-color: var(--cor-destaque); /* Borda laranja no hover */
+  border-left-color: var(--cor-destaque);
 }
 
 /* ESTILOS PARA SEÇÃO FAQ (Perguntas e Respostas) */
 .faq-page-content {
-    /* Adicionado padding-top para evitar que o conteúdo grude no título da seção principal */
     padding-top: 1.5rem; 
 }
 
@@ -379,7 +361,7 @@ body {
 
 .faq-page-content h3 {
     font-family: var(--fonte-principal);
-    color: var(--cor-primaria); /* Título de categoria azul primário */
+    color: var(--cor-primaria);
     font-size: 1.8rem;
     margin-top: 3.5rem;
     margin-bottom: 1.8rem;
@@ -391,7 +373,7 @@ body {
 
 .faq-page-content h4 {
     font-family: var(--fonte-principal);
-    color: var(--cor-texto-principal); /* Texto da pergunta escuro */
+    color: var(--cor-texto-principal);
     font-size: 1.35rem;
     margin-top: 2rem;
     margin-bottom: 1.2rem;
@@ -406,11 +388,11 @@ body {
 }
 
 .faq-page-content ol li {
-    background-color: var(--cor-terciaria); /* Fundo das opções de rádio */
+    background-color: var(--cor-terciaria);
     margin-bottom: 0.8rem;
     padding: 1.2rem 1.8rem;
     border-radius: var(--radius-borda);
-    border: 1px solid var(--cor-quartenaria); /* Borda sutil */
+    border: 1px solid var(--cor-quartenaria);
     display: flex;
     align-items: center;
     font-size: 1.05rem;
@@ -422,9 +404,9 @@ body {
 }
 
 .faq-page-content ol li:hover:not(.correct):not(.incorrect) {
-    background-color: var(--cor-branco); /* Fundo branco no hover */
+    background-color: var(--cor-branco);
     box-shadow: var(--sombra-media);
-    border-color: var(--cor-primaria); /* Borda colorida no hover */
+    border-color: var(--cor-primaria);
 }
 
 .faq-page-content ol li label {
@@ -448,12 +430,12 @@ body {
     outline: none;
     transition: all 0.2s ease;
     flex-shrink: 0;
-    background-color: var(--cor-branco); /* Garante fundo branco para o rádio button */
+    background-color: var(--cor-branco);
 }
 
 .faq-page-content ol li input[type="radio"]:checked {
-    border-color: var(--cor-radio-check); /* Usar a variável do root */
-    background-color: var(--cor-radio-check); /* Usar a variável do root */
+    border-color: var(--cor-radio-check);
+    background-color: var(--cor-radio-check);
 }
 
 .faq-page-content ol li input[type="radio"]:checked::before {
@@ -471,19 +453,19 @@ body {
 
 /* Estilos de feedback (acerto/erro) */
 .faq-page-content ol li.correct {
-    background-color: var(--cor-acerto); /* Verde */
+    background-color: var(--cor-acerto);
     border-color: var(--cor-acerto);
-    color: var(--cor-branco); /* Texto branco para bom contraste */
+    color: var(--cor-branco);
     box-shadow: var(--sombra-media);
-    pointer-events: none; /* Desabilita clique após a resposta */
+    pointer-events: none;
 }
 
 .faq-page-content ol li.incorrect {
-    background-color: var(--cor-erro); /* Vermelho */
+    background-color: var(--cor-erro);
     border-color: var(--cor-erro);
-    color: var(--cor-branco); /* Texto branco para bom contraste */
+    color: var(--cor-branco);
     box-shadow: var(--sombra-media);
-    pointer-events: none; /* Desabilita clique após a resposta */
+    pointer-events: none;
 }
 
 /* Ícones de feedback */
@@ -495,7 +477,7 @@ body {
     font-size: 1.4rem;
     line-height: 1;
     margin-top: -2px;
-    color: var(--cor-branco); /* Ícones brancos */
+    color: var(--cor-branco);
 }
 
 .faq-page-content ol li.incorrect::after {
@@ -506,66 +488,67 @@ body {
     font-size: 1.4rem;
     line-height: 1;
     margin-top: -2px;
-    color: var(--cor-branco); /* Ícones brancos */
+    color: var(--cor-branco);
 }
-
 
 /* Esconder o ícone padrão de letra (a, b, c, d) */
 .faq-page-content ol li::before {
     display: none;
 }
 
-
 /* RODAPÉ */
 footer.rodape {
   text-align: center;
   padding: 1.8rem;
-  background-color: var(--cor-primaria); /* Rodapé azul primário */
+  background-color: var(--cor-primaria);
   color: var(--cor-texto-claro);
   font-size: 0.95rem;
   flex-shrink: 0;
   width: 100%;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); /* Sombra superior mais leve */
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
 }
 
 
-/* RESPONSIVIDADE */
+/* ============================================== */
+/* RESPONSIVIDADE: OTIMIZAÇÃO PARA MOBILE (Max-width 992px e 576px) */
+/* ============================================== */
+
+/* Para telas menores que 992px (tablets e smartphones em paisagem/retrato) */
 @media (max-width: 992px) {
   html, body {
       height: auto; /* Permite que o body se expanda conforme o conteúdo */
       overflow-x: hidden; /* Evita rolagem horizontal indesejada */
   }
   .layout-container {
-    flex-direction: column;
+    flex-direction: column; /* Pilha sidebar e main content verticalmente */
     height: auto; /* Altura se ajusta ao conteúdo */
     box-shadow: none; /* Remove sombra geral para mobile */
     border-radius: 0; /* Remove borda para ocupar 100% da largura */
   }
 
   .sidebar {
-    position: relative; /* Deixa de ser fixo */
-    width: 100%; /* Ocupa 100% da largura */
+    position: relative; /* Deixa de ser fixo, ocupa espaço no fluxo do documento */
+    width: 100%; /* Ocupa 100% da largura da tela */
     padding: 2rem 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra na parte inferior da sidebar */
     height: auto; /* Altura se ajusta ao conteúdo */
     overflow-y: visible; /* Garante que não haja barra de rolagem interna */
-    border-radius: 0 0 var(--radius-borda) var(--radius-borda);
+    border-radius: 0 0 var(--radius-borda) var(--radius-borda); /* Borda arredondada apenas na parte inferior */
   }
 
   .main-content {
-    margin-left: 0; /* Remove margem da sidebar */
-    padding: 2rem 1.5rem;
-    overflow-y: visible; /* Garante que não haja barra de rolagem interna */
+    margin-left: 0; /* Remove a margem que compensava a sidebar fixa */
+    padding: 2rem 1.5rem; /* Ajusta o padding para telas menores */
+    overflow-y: visible; /* Garante que o conteúdo principal possa rolar naturalmente */
     height: auto; /* Altura se ajusta ao conteúdo */
-    /* max-height: unset; */ /* Já implícito com height: auto */
   }
 
   .profile-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* Menos espaço vertical */
   }
 
   .titulo {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* Reduz o tamanho do título */
   }
 
   .foto {
@@ -580,29 +563,29 @@ footer.rodape {
   .main-nav {
     display: flex;
     flex-wrap: wrap; /* Permite que os botões quebrem a linha */
-    justify-content: center;
-    gap: 0.8rem;
+    justify-content: center; /* Centraliza os botões */
+    gap: 0.8rem; /* Espaçamento entre os botões */
     margin-bottom: 2rem;
   }
 
   .nav-button {
-    width: auto;
+    width: auto; /* Permite que a largura seja definida pelo flex-grow ou conteúdo */
     flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
-    max-width: 200px; /* Limita o tamanho máximo dos botões */
-    text-align: center;
+    max-width: 200px; /* Limita o tamanho máximo dos botões para evitar que fiquem muito largos */
+    text-align: center; /* Centraliza o texto do botão */
     padding: 0.8rem 1rem;
     font-size: 0.95rem;
     white-space: normal; /* Permite quebra de linha no texto do botão */
     text-overflow: unset; /* Remove reticências */
   }
   .nav-button.ativa {
-      transform: none; /* Remove a translação lateral */
-      border-left: none; /* Remove a borda lateral */
+      transform: none; /* Remove a translação lateral do estado ativo */
+      border-left: none; /* Remove a borda lateral do estado ativo */
       padding-left: 0.8rem; /* Volta ao padding normal */
-      border: 2px solid var(--cor-destaque); /* Adiciona uma borda para destaque */
+      border: 2px solid var(--cor-destaque); /* Adiciona uma borda para destaque no mobile */
   }
   .nav-button:hover:not(.ativa) {
-    transform: none; /* Remove a translação lateral no hover */
+    transform: none; /* Remove a translação lateral no hover para mobile */
   }
 
   .sidebar-info {
@@ -624,18 +607,18 @@ footer.rodape {
 
   .content-section {
     padding: 1.8rem 1.8rem;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--sombra-media);
+    margin-bottom: 1.5rem; /* Espaçamento entre as seções */
+    box-shadow: var(--sombra-media); /* Mantém sombra padrão no mobile */
   }
   .content-section:hover {
-      box-shadow: var(--sombra-media); /* Mantém a sombra padrão no hover para evitar mudança brusca */
+      box-shadow: var(--sombra-media); /* Mantém a sombra padrão no hover para evitar mudança brusca em touch */
   }
   .content-section:last-of-type {
-      margin-bottom: 2.5rem; /* Adiciona margem inferior na última seção para mobile antes do footer */
+      margin-bottom: 2.5rem; /* Adiciona margem inferior na última seção para mobile (antes do footer) */
   }
 
   .content-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Reduz o tamanho dos títulos das seções */
     margin-bottom: 2rem;
   }
   .content-section h2::after {
@@ -644,7 +627,7 @@ footer.rodape {
   }
 
   .materiais, .grade-topicos {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Permite 1 ou 2 colunas dependendo do espaço */
     gap: 1.5rem;
   }
 
@@ -674,7 +657,6 @@ footer.rodape {
       width: 8px;
       height: 8px;
   }
-  /* Ícones de feedback para telas menores - ajuste para visibilidade */
   .faq-page-content ol li.correct::after,
   .faq-page-content ol li.incorrect::after {
       font-size: 1.2rem; /* Levemente menor */
@@ -682,9 +664,10 @@ footer.rodape {
   }
 }
 
+/* Para telas menores que 576px (smartphones em retrato) */
 @media (max-width: 576px) {
   .sidebar {
-    padding: 1.5rem 0.8rem;
+    padding: 1.5rem 0.8rem; /* Padding ainda menor para telas muito pequenas */
   }
   .titulo {
     font-size: 1.5rem;
@@ -695,6 +678,9 @@ footer.rodape {
   }
   .crp {
     font-size: 0.85rem;
+  }
+  .main-nav {
+      gap: 0.6rem; /* Reduz o espaçamento entre os botões */
   }
   .nav-button {
     font-size: 0.85rem;
@@ -725,7 +711,7 @@ footer.rodape {
       width: 60px; /* Mais ajuste no tamanho da linha */
   }
   .materiais, .grade-topicos {
-    grid-template-columns: 1fr; /* Coluna única para telas muito pequenas */
+    grid-template-columns: 1fr; /* Força uma única coluna para telas muito pequenas */
   }
   .faq-page-content h3 {
     font-size: 1.2rem;
@@ -737,9 +723,8 @@ footer.rodape {
     font-size: 0.8rem;
     padding: 0.7rem 0.8rem;
   }
-  /* Ícones de feedback para telas muito pequenas - ajuste final */
   .faq-page-content ol li.correct::after,
   .faq-page-content ol li.incorrect::after {
-      font-size: 1rem;
+      font-size: 1rem; /* Ajuste final nos ícones */
   }
 }
