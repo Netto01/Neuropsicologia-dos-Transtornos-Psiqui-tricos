@@ -13,6 +13,11 @@
   --cor-branco: #FFFFFF; /* Branco puro */
   --cor-cinza-claro: #B0BEC5; /* Cinza médio para bordas e divisores */
   --cor-verde-whatsapp: #25D366; /* Mantido para o botão do WhatsApp */
+  /* Novas variáveis para redes sociais, se desejar mais controle */
+  --cor-instagram: #E1306C; /* Cor base do Instagram */
+  --cor-instagram-hover: #C13584; /* Cor para hover do Instagram */
+  --cor-email: #28A745; /* Cor para o link de email (pode ser ajustada) */
+  --cor-email-hover: #218838; /* Cor para hover do email */
 
   --sombra-leve: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
   --sombra-media: 0 5px 15px rgba(0, 0, 0, 0.12); /* Sombra padrão para cards */
@@ -168,13 +173,16 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   text-align: left;
   margin-top: auto;
+  display: flex; /* Adicionado para organizar os links */
+  flex-direction: column; /* Coloca os links um abaixo do outro */
+  gap: 1rem; /* Espaçamento entre os links */
 }
 
 .sidebar-info h3 {
   font-family: var(--fonte-principal);
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.2rem; /* Ajustado para dar espaço antes dos links */
   color: var(--cor-texto-claro);
   text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2);
 }
@@ -183,32 +191,62 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--cor-texto-claro);
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Ajustado para dar espaço antes dos links */
   opacity: 0.95;
 }
 
-.botao-contato {
-  display: inline-block;
-  margin-top: 2.5rem;
-  background-color: var(--cor-verde-whatsapp);
-  color: white;
-  padding: 0.9rem 2rem;
+/* Estilo base para todos os botões de contato na sidebar-info */
+.sidebar-info .botao-contato,
+.sidebar-info .link-social,
+.sidebar-info .link-contato-email {
+  display: block; /* Garante que cada link ocupe sua própria linha */
+  padding: 0.9rem 2rem; /* Padding consistente com o botão existente */
   border-radius: var(--radius-borda);
   text-decoration: none;
   font-family: var(--fonte-principal);
   font-weight: 700;
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
   font-size: 1.05rem;
   letter-spacing: 0.8px;
+  text-align: center; /* Centraliza o texto */
+  color: var(--cor-branco); /* Cor do texto padrão para botões escuros */
+  transition: all 0.3s ease;
 }
 
-.botao-contato:hover {
-  background-color: #1DA852;
+/* Estilo específico para o botão do WhatsApp */
+.sidebar-info .botao-contato {
+  background-color: var(--cor-verde-whatsapp);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+.sidebar-info .botao-contato:hover {
+  background-color: #1DA852; /* Tom mais escuro do verde */
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
 }
 
+/* Estilo específico para o botão do Instagram */
+.sidebar-info .link-social {
+  background-color: var(--cor-instagram);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.4); /* Sombra baseada na cor do Instagram */
+}
+
+.sidebar-info .link-social:hover {
+  background-color: var(--cor-instagram-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(225, 48, 108, 0.6);
+}
+
+/* Estilo específico para o botão de E-mail */
+.sidebar-info .link-contato-email {
+  background-color: var(--cor-email); /* Usando a nova variável de cor para e-mail */
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.4); /* Sombra baseada na cor do email */
+}
+
+.sidebar-info .link-contato-email:hover {
+  background-color: var(--cor-email-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(40, 167, 69, 0.6);
+}
 
 /* MAIN CONTENT (Coluna Direita - ROLÁVEL) */
 .main-content {
@@ -370,6 +408,17 @@ body {
     font-weight: 700;
     letter-spacing: 0.5px;
 }
+
+.faq-page-content h3::after { /* Adicionado para linha sublinhada em h3 */
+  content: '';
+  display: block;
+  width: 50px; /* Pequena linha para sublinhar o h3 */
+  height: 3px;
+  background-color: var(--cor-destaque);
+  margin-top: 10px; /* Espaço entre o h3 e a linha */
+  border-radius: 2px;
+}
+
 
 .faq-page-content h4 {
     font-family: var(--fonte-principal);
@@ -591,8 +640,9 @@ footer.rodape {
   .sidebar-info {
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-    margin-top: 1rem;
+    text-align: center; /* Alinha o texto da info ao centro no mobile */
+    margin-top: 1.5rem; /* Mais espaço para os links */
+    gap: 0.8rem; /* Reduz o espaçamento entre os links no mobile */
   }
   .sidebar-info h3 {
     font-size: 1.2rem;
@@ -601,10 +651,25 @@ footer.rodape {
   .sidebar-info p {
     font-size: 0.85rem;
   }
-  .botao-contato {
-    margin-top: 1rem;
+  /* Estilos para os botões de contato na sidebar-info (mobile) */
+  .sidebar-info .botao-contato,
+  .sidebar-info .link-social,
+  .sidebar-info .link-contato-email {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    padding: 0.7rem 1.5rem; /* Ajusta o padding */
+    transform: none; /* Remove translação em hover/ativos para mobile */
+    box-shadow: var(--sombra-leve); /* Sombra mais leve para mobile */
+  }
+  .sidebar-info .botao-contato:hover,
+  .sidebar-info .link-social:hover,
+  .sidebar-info .link-contato-email:hover {
+      transform: none; /* Remove o efeito de levantar no hover para mobile */
+      box-shadow: var(--sombra-media); /* Mantém uma sombra leve no hover */
   }
 
+  .main-content {
+    padding: 1.8rem 1.5rem;
+  }
   .content-section {
     padding: 1.8rem 1.8rem;
     margin-bottom: 1.5rem; /* Espaçamento entre as seções */
@@ -640,6 +705,11 @@ footer.rodape {
     font-size: 1.3rem;
     margin-top: 2rem;
     padding-bottom: 0.6rem;
+  }
+  .faq-page-content h3::after { /* Ajuste da linha em h3 para mobile */
+      width: 40px;
+      height: 2px;
+      margin-top: 8px;
   }
 
   .faq-page-content h4 {
@@ -692,7 +762,10 @@ footer.rodape {
   .sidebar-info p {
     font-size: 0.75rem;
   }
-  .botao-contato {
+  /* Ajustes para os botões de contato no mobile menor */
+  .sidebar-info .botao-contato,
+  .sidebar-info .link-social,
+  .sidebar-info .link-contato-email {
     font-size: 0.85rem;
     padding: 0.6rem 1rem;
   }
